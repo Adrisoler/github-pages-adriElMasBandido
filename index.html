@@ -1,1 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Servidor de semi rol en MTA:SA con experiencia divertida, comunidad activa y reglas claras. Únete a Calentón RP." />
+  <title>Calentón RP</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #1f1c2c, #928dab);
+      color: white;
+      line-height: 1.6;
+    }
+    header, section, footer {
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+    header {
+      animation-delay: 0.2s;
+    }
+    section {
+      animation-delay: 0.4s;
+      display: none; /* Secciones ocultas por defecto */
+    }
+    footer {
+      animation-delay: 0.6s;
+      font-size: 0.9em;
+      opacity: 0.6;
+    }
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+    p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "\2022 ";
+      color: #fc913a;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 8px;
+      background-color: #ff4e50;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #fc913a;
+    }
+    .btn-close {
+      background-color: #4e50ff;
+    }
+    .btn-close:hover {
+      background-color: #3a44fc;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+    #preloader {
+      background: #1f1c2c;
+      color: white;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      font-size: 1.5em;
+      flex-direction: column;
+      animation: fadeIn 2s ease forwards;
+    }
+    #preloader .loading-circle {
+      border: 8px solid #fff;
+      border-top: 8px solid #fc913a;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: spin 2s linear infinite, pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        border-color: #fc913a;
+      }
+      50% {
+        transform: scale(1.2);
+        border-color: #ff4e50;
+      }
+      100% {
+        transform: scale(1);
+        border-color: #fc913a;
+      }
+    }
+    #preloader p {
+      margin-top: 20px;
+      animation: slideUp 1s ease-in-out forwards;
+      opacity: 0;
+    }
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <div class="loading-circle"></div>
+    <p>Bienvenido a la página de Calentón RP</p>
+    <p>Cargando... by Adri-ElMasBandido</p>
+  </div>
+
+  <header>
+    <h1>Calentón RP</h1>
+    <p>Servidor de semi rol en MTA:SA que busca hacer la diferencia ofreciendo una experiencia divertida, seria y con una comunidad única.</p>
+    <a href="mtasa://127.0.0.1:22003" class="btn">Conectarse al Servidor</a>
+    <a href="https://discord.gg/sBgbFNc8A5" target="_blank" class="btn">Unirse al Discord</a>
+    <!-- Botones adicionales -->
+    <a href="javascript:void(0);" class="btn" onclick="mostrarSeccion('sobre-nosotros')">¿Quiénes Somos?</a>
+    <a href="javascript:void(0);" class="btn" onclick="mostrarSeccion('normativa')">Normativa del Servidor</a>
+    <a href="javascript:void(0);" class="btn" onclick="mostrarSeccion('reglas-organizaciones')">Reglas Organizaciones</a>
+    <a href="javascript:void(0);" class="btn" onclick="mostrarSeccion('reglas-discord')">Reglas Discord</a>
+  </header>
+
+  <!-- Contenido de las secciones -->
+
+  <section id="sobre-nosotros">
+    <h2>¿Quiénes Somos?</h2>
+    <p>Calentón RP es un servidor de semi rol en MTA:SA que busca hacer la diferencia ofreciendo una experiencia divertida, seria y con una comunidad única. Nuestro objetivo es brindar un espacio donde el rol fluya de forma natural y donde cada jugador se sienta parte de algo grande.</p>
+    <!-- Botón para cerrar -->
+    <a href="javascript:void(0);" class="btn btn-close" onclick="ocultarSeccion('sobre-nosotros')">Cerrar</a>
+  </section>
+
+  <section id="normativa">
+    <h2>Normativa del Servidor</h2>
+    <ul>
+      <li>No DM (Deathmatch)</li>
+      <li>No PG (PowerGaming)</li>
+      <li>No MG (MetaGaming)</li>
+      <li>No RK (RevengeKill)</li>
+      <li>Prohibido el uso de cheats o bugs</li>
+      <li>Respetar a todos los jugadores y staff</li>
+      <li>El rol es obligatorio en zonas públicas</li>
+      <li>Prohibido hacer CK sin justificación válida</li>
+      <li>Las facciones deben seguir el lore del servidor</li>
+    </ul>
+    <!-- Botón para cerrar -->
+    <a href="javascript:void(0);" class="btn btn-close" onclick="ocultarSeccion('normativa')">Cerrar</a>
+  </section>
+
+  <section id="reglas-organizaciones">
+    <h2>Reglas de Organizaciones</h2>
+    <ul>
+      <li>No Matar Entre Aliados</li>
+      <li>Respetar Jerarquías</li>
+      <li>No Abusar de la Influencia de la Organización</li>
+      <li>Comportamiento Ético dentro y fuera de la organización</li>
+      <li>Respetar el Lore de la Organización</li>
+    </ul>
+    <!-- Botón para cerrar -->
+    <a href="javascript:void(0);" class="btn btn-close" onclick="ocultarSeccion('reglas-organizaciones')">Cerrar</a>
+  </section>
+
+  <section id="reglas-discord"> <!-- Nueva sección de reglas Discord -->
+    <h2>Reglas de Discord</h2>
+    <ul>
+      <li>Respeta a todos los miembros, sin excepciones.</li>
+      <li>Prohibido el spam y la publicidad no autorizada.</li>
+      <li>Utiliza los canales correctamente según el tema.</li>
+      <li>No se permite contenido NSFW o lenguaje ofensivo.</li>
+      <li>Sigue siempre las indicaciones de los moderadores y administradores.</li>
+    </ul>
+    <!-- Botón para cerrar -->
+    <a href="javascript:void(0);" class="btn btn-close" onclick="ocultarSeccion('reglas-discord')">Cerrar</a>
+  </section>
+
+  <section id="testimonios">
+    <h2>Testimonios</h2>
+    <p>“Nunca pensé que me divertiría tanto roleando. ¡Una joya de servidor!” — <em>@ElKevinRolero</em></p>
+    <p>“El staff es activo y la comunidad sabe lo que hace. 10/10.” — <em>@LaNenaRP</em></p>
+    <p>“Mucho rol y nada de tóxicos, se agradece.” — <em>@MiguelX</em></p>
+  </section>
+
+  <section id="soporte">
+    <h2>Soporte</h2>
+    <p>Si tienes dudas o necesitas ayuda, estamos para apoyarte. Únete a nuestro Discord y abre un ticket en la sección de soporte:</p>
+    <a href="https://discord.gg/sBgbFNc8A5" class="btn" target="_blank">Ir a Discord</a>
+  </section>
+
+  <footer>
+    <p>Gracias por visitar nuestro sitio. Si deseas unirte a la comunidad, solo haz clic en el botón "Conectarse al Servidor" y serás redirigido directamente al servidor de Calentón RP en MTA:SA.</p>
+  </footer>
+
+  <script>
+    // Ocultar preloader después de 5 segundos
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').style.display = 'none';
+      }, 5000); // 5 segundos de carga
+    });
+
+    // Función para mostrar las secciones al hacer clic en los botones
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('section');
+      secciones.forEach(seccion => seccion.style.display = 'none');  // Ocultar todas las secciones
+      document.getElementById(id).style.display = 'block';  // Mostrar la sección seleccionada
+      window.scrollTo({ top: document.getElementById(id).offsetTop, behavior: 'smooth' }); // Desplazarse hacia la sección
+    }
+
+    // Función para ocultar las secciones cuando se presiona el botón de "Cerrar"
+    function ocultarSeccion(id) {
+      document.getElementById(id).style.display = 'none';  // Ocultar la sección
+    }
+  </script>
+</body>
+</html>
 
